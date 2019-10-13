@@ -1,0 +1,9 @@
+[Unit]
+Description=dnsmasq daemon for use as a WiFi accesspoint
+
+# unfortunately this doesn't work
+# Wants=wifiap_hostapd@%I.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/sbin/wifiap_dnsmasq.sh %I

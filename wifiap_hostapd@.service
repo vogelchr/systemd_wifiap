@@ -1,0 +1,7 @@
+[Unit]
+Description=hostapd daemon for use as a WiFi accesspoint
+
+[Service]
+Type=simple
+ExecStartPre=/sbin/ip link set %I up
+ExecStart=/usr/bin/hostapd -i %I /etc/hostapd/wifiap_hostapd.conf

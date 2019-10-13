@@ -1,0 +1,4 @@
+ACTION=="add",    SUBSYSTEM=="net", ENV{DEVTYPE}=="wlan", TAG+="systemd", ENV{SYSTEMD_WANTS}="wifiap_dnsmasq@%k.service wifiap_hostapd@%k.service"
+ACTION=="remove", SUBSYSTEM=="net", ENV{DEVTYPE}=="wlan", RUN+="/sbin/systemctl stop wifiap_dnsmasq@%k.service", RUN+="/sbin/systemctl stop wifiap_hostapd@%k.service"
+
+

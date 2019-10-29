@@ -1,5 +1,10 @@
 [Unit]
 Description=dnsmasq daemon for use as a WiFi accesspoint
+
+# we need to forward packets, and want to know what the
+# default route is, so we require an active network connection
+# to be present
+After=network-online.target
 Wants=network-online.target
 
 [Service]
